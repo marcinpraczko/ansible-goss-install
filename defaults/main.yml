@@ -1,0 +1,14 @@
+---
+# == Detail about Goss binary files in GitHub ==
+# https://github.com/aelsabbahy/goss/releases/
+goss_version: v0.3.5
+goss_arch: amd64
+goss_dst_dir: bin/
+goss_dst_dir_mode: 0755
+goss_sha256sum: 5669df08e406abf594de0e7a7718ef389e5dc7cc76905e7f6f64711e6aad7fa3
+goss_bin_filename: goss-linux-{{ goss_arch }}
+goss_bin_symlink: goss
+goss_url: "https://github.com/aelsabbahy/goss/releases/download/{{ goss_version }}/{{ goss_bin_filename }}"
+
+# == Variables related with file system ==
+goss_create_dst_dir: True

@@ -1,0 +1,21 @@
+---
+
+- name: "Ensure that destination folder exists"
+  file:
+    state: directory
+    path: "{{ goss_dst_dir }}"
+    mode: "{{ goss_dst_dir_mode }}"
+  when: goss_create_dst_dir
+
+- name: "Download Goss binary from GitHub"
+  get_url:
+    url: "{{ goss_url }}"
+    dest: "{{ goss_dst_dir }}"
+    sha256sum: "{{ goss_sha256sum }}"
+    mode: 0755
+
+- name: "Ensure that Symlink to binary file is created"
+  file:
+    src: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
+    dest: "{{ goss_dst_dir }}/{{ goss_bin_symlink }}"
+    state: link
