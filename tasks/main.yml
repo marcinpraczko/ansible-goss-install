@@ -16,6 +16,6 @@
 
 - name: "Ensure that Symlink to binary file is created"
   file:
-    src: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
-    dest: "{{ goss_dst_dir }}/{{ goss_bin_symlink }}"
     state: link
+    src: "{{ goss_bin_filename }}"
+    dest: "{{ goss_dst_dir }}/{{ goss_bin_symlink }}"

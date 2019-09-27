@@ -3,6 +3,7 @@
 # Test01: Create directory where goss should be downloaded
 - name: "Converge 01 | Full default variables"
   hosts: all
+  become: true
   gather_facts: False
 
   roles:
@@ -12,6 +13,7 @@
 # Test02: DO NOT create directory where goss should be downloaded
 - name: "Converge 02 | DO NOT Create directory for goss"
   hosts: all
+  become: true
   gather_facts: False
 
   roles:

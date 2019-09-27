@@ -2,14 +2,13 @@
 
 **Version 0.1.1**
 
-This role aims help with installation of validation tool: ``goss``
+This role aims to help with installation of validation tool: ``goss`` (Version: 0.3.7)
 
 - [Goss](https://github.com/aelsabbahy/goss)
 
 There are already modules:
 
-- [Goss Module 01 - Ansible Galaxy](https://galaxy.ansible.com/mcorbin/goss-module)
-- [Goss Module 02 - Ansible Galaxy](https://galaxy.ansible.com/naftulikay/degoss/)
+- [Goss Module 01 - Ansible Galaxy](https://galaxy.ansible.com/dockpack/base_goss)
 
 ## Installation
 
@@ -63,7 +62,7 @@ Following example will install ``goss`` in user home directory: ``${HOME}/bin``:
 
 Following example will install ``goss`` in system: ``/usr/local/bin``:
 
-- ``${HOME}/bin`` - folder will be created.
+- ``/usr/local/bin`` - folder will be created.
 
 ```yaml
 - name: "Install goss in system"
@@ -78,11 +77,11 @@ Following example will install ``goss`` in system: ``/usr/local/bin``:
 
 ## Testing
 
-Role this can be tested via ``molecule`` (need to be installed first) with commands:
+This role can be tested via ``molecule`` with commands (Following commands will install it):
 
 ```bash
-# Docker and docker-py is required to allow to run full test
-molecule test
+make create-python-venv
+make test-molecule
 ```
 
 For more detail about molecule, please visit:

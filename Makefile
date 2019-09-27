@@ -1,24 +1,26 @@
-# Simple Makefile for faster running commands
+# ============================================================================
+# Self-documented makefile
+# ============================================================================
 
-LCD=$(shell pwd)
+.PHONY: help
+help: ## HELP: Show this help message
+	@echo 'usage: make [target] ...'
+	@echo
+	@echo 'Targets:'
+	@echo '========'
+	@egrep '^(.+)\:\ ##\ (.+)' ${MAKEFILE_LIST} | column -t -c 2 -s ':#'
 
-# Settings for colourful output
-RED=$(shell tput setaf 1)
-GREEN=$(shell tput setaf 2)
-YELLOW=$(shell tput setaf 3)
-CYAN=$(shell tput setaf 6)
-NC=$(shell tput sgr0)
 
-
-.PHONY: usage
-usage:
-	@echo ""
-	@echo "$(GREEN)Targets:$(NC)"
-	@echo ""
-	@echo "  $(CYAN)bump-ver-patch$(NC)                - Bump version: Patch"
-	@echo ""
-
-.PHONY: bump-ver-patch
-bump-ver-patch:
+.PHONY: bump-version-patch
+bump-version-patch: ## DEVELOP: Bump version - patch level
 	bumpversion patch
 
+
+.PHONY: create-python-venv
+create-python-venv: ## DEVELOP: Create python venv and install PIP packages
+	scripts/create_python_venv.sh
+
+
+.PHONY: test-molecule
+test-molecule: ## DEVELOP: Test installing role with molecule
+	molecule test
