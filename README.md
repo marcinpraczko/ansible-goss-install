@@ -1,3 +1,8 @@
+[![Snyk Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) [![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__goss-blue.svg?style=flat)](https://galaxy.ansible.com/marcinpraczko/goss-install)  
+
+
+
+
 # Ansible-goss-install
 
 **Version 0.1.2**
@@ -9,11 +14,6 @@ This role aims to help with installation of validation tool: ``goss`` (Version: 
 There are already modules:
 
 - [Goss Module 01 - Ansible Galaxy](https://galaxy.ansible.com/dockpack/base_goss)
-
-
-# Badges 
-
-- [![Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) 
 
 
 ## Installation
