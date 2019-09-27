@@ -10,7 +10,7 @@ file:
     mode: "0755"
     # NOTE: This is just test: Ansible is checking SHA so this is not required,
     #       However this is only for example and demo about validation
-    sha256: 5669df08e406abf594de0e7a7718ef389e5dc7cc76905e7f6f64711e6aad7fa3
+    sha256: 357f5c7f2e7949b412bce44349cd32ab19eb3947255a8ac805f884cc2c326059
 
   /bin_goss/goss:
     exists: true
