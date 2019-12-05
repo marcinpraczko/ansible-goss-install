@@ -1,5 +1,5 @@
-ansible==2.8.5
-ansible-lint==4.1.0
+ansible==2.9.2
+ansible-lint==4.2.0
 anyconfig==0.9.7
 arrow==0.15.2
 asn1crypto==0.24.0
@@ -52,7 +52,7 @@ pexpect==4.7.0
 pluggy==0.13.0
 poyo==0.5.0
 pre-commit==1.18.3
-psutil==5.6.3
+psutil==5.6.7
 ptyprocess==0.6.0
 py==1.8.0
 pycodestyle==2.5.0
@@ -82,5 +82,5 @@ urllib3==1.25.6
 virtualenv==16.7.5
 wcwidth==0.1.7
 whichcraft==0.6.1
-yamllint==1.17.0
+yamllint==1.19.0
 zipp==0.6.0
