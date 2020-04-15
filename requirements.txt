@@ -1,4 +1,4 @@
-ansible==2.9.2
+ansible==2.9.3
 ansible-lint==4.2.0
 anyconfig==0.9.7
 arrow==0.15.2
@@ -64,7 +64,7 @@ pytest==4.6.5
 python-dateutil==2.8.0
 python-gilt==1.2.1
 python-vagrant==0.5.15
-PyYAML==5.1.2
+PyYAML==5.2
 requests==2.22.0
 ruamel.ordereddict==0.4.14
 ruamel.yaml==0.16.5
@@ -78,7 +78,7 @@ testinfra==3.2.0
 toml==0.10.0
 tree-format==0.1.2
 typing==3.7.4.1
-urllib3==1.25.6
+urllib3==1.25.8
 virtualenv==16.7.5
 wcwidth==0.1.7
 whichcraft==0.6.1
