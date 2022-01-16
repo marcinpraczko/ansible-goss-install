@@ -1,4 +1,6 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
+
+# set -eo
 
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
 VENV_NAME="venv/p35"
