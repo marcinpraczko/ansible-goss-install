@@ -1,0 +1,10 @@
+# https://github.com/marketplace/actions/ansible-test
+- name: Perform integration testing with ansible-test
+  uses: ansible-community/ansible-test-gh-action@release/v1
+  with:
+    ansible-core-version: stable-2.9.7
+    pre-test-cmd: echo This runs before the ansible-test invocation
+    python-version: 2.7.12
+    target-python-version: 2.7.12
+    testing-type: integration
+    test-deps: ansible.netcommon
