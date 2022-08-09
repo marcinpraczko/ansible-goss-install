@@ -5,11 +5,13 @@ goss_arch: amd64
 goss_dst_dir: bin/
 goss_dst_dir_mode: 0755
 
-# Latest version
-goss_version: v0.3.8
-goss_sha256sum: 4c82470543350371531f26f9d3b0265bff9e93d80d952f40cca212fc2f87864d
-
+ # Latest version
+goss_version: v0.3.18
+goss_sha256sum: 432308ebca0caf8165d45bd27e3262126aad9d15572ac8cb3149b3c91f75aace
+ 
 # OLD - Add choices here in some point
+# goss_version: v0.3.8
+# goss_sha256sum: 4c82470543350371531f26f9d3b0265bff9e93d80d952f40cca212fc2f87864d
 # goss_version: v0.3.7
 # goss_sha256sum: 357f5c7f2e7949b412bce44349cd32ab19eb3947255a8ac805f884cc2c326059
 # goss_version: v0.3.5
