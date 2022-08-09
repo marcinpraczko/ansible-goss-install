@@ -5,7 +5,7 @@
 
 # Ansible-goss-install
 
-**Version 0.1.4**
+**Version 0.1.5**
 
 This role aims to help with installation of validation tool: ``goss`` (Version: 0.3.8)
 
