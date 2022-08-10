@@ -3,7 +3,7 @@
 # set -eo
 
 PROJECT_ROOT="$(git rev-parse --show-toplevel)"
-VENV_NAME="venv/p35"
+VENV_NAME="venv/p38"
 
 echo "[+] Creating venv (python3)"
 if [[ ! -d "${PROJECT_ROOT}/${VENV_NAME}" ]]; then
@@ -19,5 +19,5 @@ env | grep -i VIRTUAL
 echo "[+] Upgrade PIP / Setuptools"
 pip install -U pip setuptools
 
-echo "[+] Installing PIP packages"
-pip install -r requirements.txt
+# echo "[+] Installing PIP packages"
+# pip install -r requirements.txt
