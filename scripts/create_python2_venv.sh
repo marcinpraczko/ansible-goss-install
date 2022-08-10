@@ -16,5 +16,4 @@ env | grep -i VIRTUAL
 echo "[+] Installing PIP packages"
 pip install -r requirements.txt
 
-
 # molecule init scenario --driver-name vagrant --verifier-name goss
