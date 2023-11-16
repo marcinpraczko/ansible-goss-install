@@ -11,8 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          path: molecule_demo
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
@@ -24,7 +22,7 @@ jobs:
           pwd
           ls -la molecule_demo
           python3 -m pip install --upgrade pip
-          python3 -m pip install -r molecule_demo/requirements.txt
+          python3 -m pip install -r requirements.txt
 
       - name: Test with molecule
         run: |
