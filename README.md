@@ -93,3 +93,10 @@ make test-molecule
 For more detail about molecule, please visit:
 
 - [Molecule](https://molecule.readthedocs.io/en/latest/)
+
+
+## Resources
+
+- https://ansible.readthedocs.io/projects/molecule/ci/
+- https://ansible.readthedocs.io/projects/molecule/getting-started/
+- https://stackoverflow.com/questions/69652451/molecule-error-computed-fully-qualified-role-name-does-not-follow-current-galax
