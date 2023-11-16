@@ -6,4 +6,3 @@
 
   roles:
     - role: marcinpraczko.goss-install
-      goss_dst_dir: /usr/local/bin
