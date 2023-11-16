@@ -1,22 +1,6 @@
 ---
-dependency:
-  name: galaxy
-driver:
-  name: vagrant
-  provider:
-    name: virtualbox
-lint:
-  name: yamllint
 platforms:
-  - name: centos7
-    box: centos/7
-  - name: ubuntu1804
-    box: generic/ubuntu1804
-provisioner:
-  name: ansible
-  lint:
-    name: ansible-lint
-verifier:
-  name: goss
-  lint:
-    name: yamllint
+  - name: instance
+    # you might want to add your own variables here based on what provisioning
+    # you are doing like:
+    # image: quay.io/centos/centos:stream8
