@@ -16,8 +16,8 @@ bump-version-patch: ## DEVELOP: Bump version - patch level
 	bumpversion patch
 
 
-.PHONY: create-python3-venv
-create-python3-venv: ## DEVELOP: Create python venv and install PIP packages
+.PHONY: python3-create-venv
+python3-create-venv: ## DEVELOP: Create python venv and install PIP packages
 	scripts/create-python3-venv.sh
 
 # .PHONY: test-molecule

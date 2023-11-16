@@ -19,5 +19,5 @@ env | grep -i VIRTUAL
 echo "[+] Upgrade PIP / Setuptools"
 pip install -U pip setuptools wheel
 
-# echo "[+] Installing PIP packages"
-# pip install -r requirements.txt
+echo "[+] Installing PIP packages (for development)"
+pip install -r requirements-dev.txt
