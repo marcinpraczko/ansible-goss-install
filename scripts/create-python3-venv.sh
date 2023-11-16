@@ -20,4 +20,4 @@ echo "[+] Upgrade PIP / Setuptools"
 pip install -U pip setuptools wheel
 
 echo "[+] Installing PIP packages (for development)"
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
