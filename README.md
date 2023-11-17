@@ -5,7 +5,7 @@
 
 # Ansible-goss-install
 
-**Version 0.1.5**
+**Version 0.1.6**
 
 This role aims to help with installation of validation tool: ``goss`` (Version: 0.3.18)
 
@@ -86,10 +86,16 @@ Following example will install ``goss`` in system: ``/usr/local/bin``:
 This role can be tested via ``molecule`` with commands (Following commands will install it):
 
 ```bash
-make create-python-venv
-make test-molecule
+make python3-create-venv
+make test-molecule            # WARNING: This is using default driver - which is ansible, 
+                              #          this means that testing role equals running it on your machine like installation.
 ```
 
 For more detail about molecule, please visit:
 
 - [Molecule](https://molecule.readthedocs.io/en/latest/)
+
+## Resources
+
+- https://ansible.readthedocs.io/projects/molecule/ci/
+- https://ansible.readthedocs.io/projects/molecule/getting-started/

@@ -1,9 +1,11 @@
 ---
 galaxy_info:
-  author: Marcin Praczko
+  role_name: goss-install
+  namespace: marcinpraczko
   description: Simple role to install binary goss file
+  author: Marcin Praczko
   license: GNU GPLv2
-  min_ansible_version: 2.0
+  min_ansible_version: 2.15
 
   platforms:
     - name: EL

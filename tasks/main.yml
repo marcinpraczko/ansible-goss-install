@@ -1,7 +1,7 @@
 ---
 
 - name: "Ensure that destination folder exists"
-  file:
+  ansible.builtin.file:
     state: directory
     path: "{{ goss_dst_dir }}"
     mode: "{{ goss_dst_dir_mode }}"
@@ -11,11 +11,11 @@
   get_url:
     url: "{{ goss_url }}"
     dest: "{{ goss_dst_dir }}"
-    sha256sum: "{{ goss_sha256sum }}"
+    checksum: "sha256:{{ goss_sha256sum }}"
     mode: 0755
 
 - name: "Ensure that Symlink to binary file is created"
-  file:
+  ansible.builtin.file:
     state: link
     src: "{{ goss_bin_filename }}"
     dest: "{{ goss_dst_dir }}/{{ goss_bin_symlink }}"
