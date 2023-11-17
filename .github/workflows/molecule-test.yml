@@ -43,5 +43,6 @@ jobs:
       - name: Test with molecule
         run: molecule test -- -v
         env:
-          PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
+          ANSIBLE_STDOUT_CALLBACK: yaml
+          PY_COLORS: '1'
