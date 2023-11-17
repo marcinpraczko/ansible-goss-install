@@ -23,6 +23,15 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install -r requirements.txt
 
+      - name: Details about molecule
+        run: |
+          molecule --version
+          molecule drivers
+          moleculre list
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+
       - name: Test with molecule
         run: molecule test -- -v
         env:
