@@ -1,6 +1,7 @@
 ---
 # https://stackoverflow.com/questions/69652451/molecule-error-computed-fully-qualified-role-name-does-not-follow-current-galax
 role_name_check: 1
+
 platforms:
   - name: instance
     # you might want to add your own variables here based on what provisioning
@@ -17,4 +18,3 @@ verifier:
   name: testinfra
   additional_files_or_dirs:
     - ../path/to/test_1.py
-

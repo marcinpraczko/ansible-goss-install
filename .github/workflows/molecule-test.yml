@@ -25,9 +25,17 @@ jobs:
 
       - name: Details about molecule
         run: |
+          echo ""
+          echo "Molecule version"
           molecule --version
+
+          echo ""
+          echo "Molecule drivers"
           molecule drivers
-          moleculre list
+
+          echo ""
+          echo "Molecule list"
+          molecule list
         env:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
