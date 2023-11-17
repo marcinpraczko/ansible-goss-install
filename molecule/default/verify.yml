@@ -1,0 +1,18 @@
+---
+- name: Verify
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  # no_log: "{{ molecule_no_log }}"
+  tasks:
+
+    # - name: Simple test
+    #   ansible.builtin.ping:
+
+    - name: Shell commands
+      ansible.builtin.command: pwd
+      register: scmd01
+
+    - name: Print return from Shell Commands above
+      ansible.builtin.debug:
+        var: scmd01
