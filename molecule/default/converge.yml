@@ -2,7 +2,7 @@
 - name: Converge
   hosts: all
   connection: local
-  gather_facts: false
+  gather_facts: True
 
   roles:
-    - role: marcinpraczko.goss-install
+    - role: goss-install
