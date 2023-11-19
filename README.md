@@ -1,10 +1,10 @@
-[![Snyk Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) [![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__goss-blue.svg?style=flat)](https://galaxy.ansible.com/marcinpraczko/goss-install)  
+[![Snyk Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) [![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__goss-blue.svg?style=flat)](https://galaxy.ansible.com/marcinpraczko/goss-install)
 
 # Ansible-goss-install
 
 **Version 0.1.6**
 
-This role aims to help with installation of validation tool: ``goss`` (Version: 0.4.4)
+This role aims to help with installation of validation tool: `goss` (Version: 0.4.4)
 
 - [Goss - Github](https://github.com/goss-org/goss/)
 - [Goss - Github - Releases](https://github.com/goss-org/goss/releases)
@@ -18,8 +18,8 @@ $ ansible-galaxy install marcinpraczko.goss-install
 
 ### Directly from github repository
 
-Sometimes some changes has been applied to ``develop`` or ``feature`` branch and are not yet released.
-Ansible-galaxy allows install roles directly from ``GitHub``.
+Sometimes some changes has been applied to `develop` or `feature` branch and are not yet released.
+Ansible-galaxy allows install roles directly from `GitHub`.
 
 ```bash
 mkdir testing-roles
@@ -27,7 +27,7 @@ cd testing-roles
 ansible-galaxy install -p roles git+https://github.com/marcinpraczko/ansible-goss-install.git,develop
 ```
 
-Above example will install ``develop`` branch. This can be adjusted to any git SHA commit, tag or branch
+Above example will install `develop` branch. This can be adjusted to any git SHA commit, tag or branch
 name - depends of requirements.
 
 Checking what version is installed can be done with command:
@@ -37,15 +37,15 @@ ansible-galaxy list -p roles
 
 ## Variables
 
-All important variables are in file: ``default/main.yml``.
+All important variables are in file: `default/main.yml`.
 
 ## Example of playbooks
 
 ### Install to user directory
 
-Following example will install ``goss`` in user home directory: ``${HOME}/bin``:
+Following example will install `goss` in user home directory: `${HOME}/bin`:
 
-- ``${HOME}/bin`` - folder will be created.
+- `${HOME}/bin` - folder will be created.
 
 ```yaml
 - name: "Install goss in home directory"
@@ -59,9 +59,9 @@ Following example will install ``goss`` in user home directory: ``${HOME}/bin``:
 
 ### Install on system
 
-Following example will install ``goss`` in system: ``/usr/local/bin``:
+Following example will install `goss` in system: `/usr/local/bin`:
 
-- ``/usr/local/bin`` - folder will be created.
+- `/usr/local/bin` - folder will be created.
 
 ```yaml
 - name: "Install goss in system"
@@ -76,12 +76,18 @@ Following example will install ``goss`` in system: ``/usr/local/bin``:
 
 ## Testing
 
-This role can be tested via ``molecule`` with commands (Following commands will install it):
+This role can be tested via `molecule` with commands (Following commands will install it):
 
 ```bash
 make python3-create-venv
-make test-molecule            # WARNING: This is using default driver - which is ansible, 
-                              #          this means that testing role equals running it on your machine like installation.
+
+# WARNING: Following command uses default driver - which is ansible,
+#          https://ansible.readthedocs.io/projects/molecule/configuration/#driver
+#          this means that testing role equals running it on your machine directly
+#          (This equals install role - so please be aware that ideally for testing
+#          this role you should have setup some testing environment first and run
+#          molecule from this testing environment)
+make test-molecule
 ```
 
 For more detail about molecule, please visit:
