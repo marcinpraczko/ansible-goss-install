@@ -1,0 +1,44 @@
+---
+
+session_name: ansible-goss-install
+start_directory: "${MPOSL_PROJECT_ROOT}"
+shell_command_before:
+  - '[ -f venv/bin/activate ] && source venv/bin/activate && reset'
+windows:
+  - window_name: Main
+    layout: even-vertical
+    options:
+      automatic-rename: 'off'
+      main-pane-height: 20
+    panes:
+      - focus: true
+        shell_command:
+          - clear
+      - shell_command:
+          - clear
+
+  - window_name: Help
+    layout: even-horizontal
+    options:
+      automatic-rename: 'off'
+      main-pane-height: 45
+    panes:
+      - focus: true
+        shell_command:
+          - clear
+          - cat README.md
+
+  - window_name: Help-Tmuxp
+    start_directory: "${MPOSL_PROJECT_ROOT}/.tmuxp/"
+    layout: even-horizontal
+    options:
+      automatic-rename: 'off'
+      main-pane-height: 45
+    panes:
+      - focus: true
+        shell_command:
+          - clear
+          - cat VERSION.rst
+      - shell_command:
+          - clear
+          - cat README.rst
