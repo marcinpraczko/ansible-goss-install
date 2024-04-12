@@ -5,7 +5,7 @@
 
 | Ansible Role Version | Goss Version |
 | -------------------- | ------------ |
-| 0.1.7                | 0.4.4        |
+| 0.1.8                | 0.4.4        |
 
 
 ## Goss resources
