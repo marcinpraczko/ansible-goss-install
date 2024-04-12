@@ -1,3 +1,6 @@
+.vscode/
 .idea/
 .molecule/
 /venv
+/tmp/*
+!/tmp/.gitfile

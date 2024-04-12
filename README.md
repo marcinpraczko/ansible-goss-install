@@ -10,8 +10,8 @@
 
 ## Goss resources
 
-- [Goss](https://github.com/goss-org/goss)
-
+- [Goss Github](https://github.com/goss-org/goss)
+- [Goss Github Relases](https://github.com/goss-org/goss/releases)
 
 ## Installation
 

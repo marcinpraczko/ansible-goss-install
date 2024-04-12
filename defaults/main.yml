@@ -6,10 +6,12 @@ goss_dst_dir: bin/
 goss_dst_dir_mode: 0755
 
 # Latest version
-goss_version: v0.4.4
-goss_sha256sum: 1c4f54b22fde9d4d5687939abc2606b0660a5d14a98afcd09b04b793d69acdc5
+goss_version: v0.4.6
+goss_sha256sum: bc818caf99cbab563126297ec568d98911d61d2d7a25f4f37068b7a7916130b5
 
 # OLD - Add choices here in some point
+# goss_version: v0.4.4
+# goss_sha256sum: 1c4f54b22fde9d4d5687939abc2606b0660a5d14a98afcd09b04b793d69acdc5
 # goss_version: v0.3.18
 # goss_sha256sum: 432308ebca0caf8165d45bd27e3262126aad9d15572ac8cb3149b3c91f75aace
 # goss_version: v0.3.8
@@ -21,7 +23,7 @@ goss_sha256sum: 1c4f54b22fde9d4d5687939abc2606b0660a5d14a98afcd09b04b793d69acdc5
 
 goss_bin_filename: goss-linux-{{ goss_arch }}
 goss_bin_symlink: goss
-goss_url: "https://github.com/aelsabbahy/goss/releases/download/{{ goss_version }}/{{ goss_bin_filename }}"
+goss_url: "https://github.com/goss-org/goss/releases/download/{{ goss_version }}/{{ goss_bin_filename }}"
 
 # == Variables related with file system ==
 goss_create_dst_dir: True
