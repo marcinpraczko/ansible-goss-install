@@ -7,7 +7,7 @@
 
 **Version 0.1.6**
 
-This role aims to help with installation of validation tool: ``goss`` (Version: 0.3.18)
+This role aims to help with installation of validation tool: ``goss`` (Version: 0.4.4)
 
 - [Goss](https://github.com/aelsabbahy/goss)
 

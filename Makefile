@@ -21,3 +21,12 @@ python3-create-venv: ## DEVELOP: Create python venv and install PIP packages
 .PHONY: test-molecule
 test-molecule: ## DEVELOP: Test installing role with molecule
 	molecule test
+
+.PHONY: check-goss-releases-versions
+check-goss-releases-versions: ## DEVELOP: Check the latest goss releases versions
+	@echo ""
+	@echo "Checking the latest goss releases versions (GH CLI)"
+	@gh release list -R github.com/goss-org/goss
+	@echo ""
+	@echo "Checking implemented versions in 'defaults/main.yml'"
+	@grep -E "^goss_(version|sha256sum)"  defaults/main.yml
