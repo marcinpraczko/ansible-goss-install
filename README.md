@@ -3,10 +3,8 @@
 
 # Ansible-goss-install
 
-| Ansible Role Version | Goss Version |
-| -------------------- | ------------ |
-| 0.1.8                | 0.4.4        |
-
+- Ansible Role Version: `0.1.8`
+- Goss Version: `0.4.6`
 
 ## Goss resources
 
@@ -80,19 +78,22 @@ Following example will install ``goss`` in system: ``/usr/local/bin``:
 
 ## Testing
 
+### There is GitHub Action for testing
+
+- [Molecule Test](https://github.com/marcinpraczko/ansible-goss-install/actions/workflows/molecule-test.yml)
+
+### Locally
+
 This role can be tested via ``molecule`` with commands (Following commands will install it):
 
 ```bash
 make python3-create-venv
-make test-molecule            # WARNING: This is using default driver - which is ansible, 
-                              #          this means that testing role equals running it on your machine like installation.
+make test-molecule            # WARNING: Uses default Ansible driver, tests run on local machine as if installing.
 ```
 
 For more detail about molecule, please visit:
 
 - [Molecule](https://molecule.readthedocs.io/en/latest/)
+- [Molecule CI](https://ansible.readthedocs.io/projects/molecule/ci/)
+- [Ansible about molecule](https://ansible.readthedocs.io/projects/molecule/getting-started/)
 
-## Resources
-
-- https://ansible.readthedocs.io/projects/molecule/ci/
-- https://ansible.readthedocs.io/projects/molecule/getting-started/
