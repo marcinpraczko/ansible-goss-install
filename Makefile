@@ -41,11 +41,11 @@ GOSS_VERSION_TO_CHECK := 0.4.6
 .PHONY: goss-check-releases-versions
 goss-check-releases-versions: ## Check the latest goss releases versions
 	@echo ""
-	@echo "Checking the latest goss releases versions (GH CLI)"
-	@gh release list -R github.com/goss-org/goss
-	@echo ""
 	@echo "Checking implemented versions in 'defaults/main.yml'"
 	@grep -E "^goss_(version|sha256sum)"  defaults/main.yml
+	@echo ""
+	@echo "Checking the latest goss releases versions (GH CLI)"
+	@gh release list -R github.com/goss-org/goss
 
 .PHONY: goss-download-release
 goss-download-release: ## Download goss release
@@ -69,7 +69,12 @@ goss-clean-release-files: ## Clean goss release files
 ## Testing ansible role
 ##
 
-# https://www.jeffgeerling.com/blog/2020/getting-colorized-output-molecule-and-ansible-on-github-actions-ci
-.PHONY: run-test-molecule
-run-test-molecule: ## Test installing role with molecule
-	PY_COLORS=1 ANSIBLE_FORCE_COLOR=1 molecule test
+.PHONY: testing-installation
+testing-installation: ## Testing installation ansible role running on vagrant
+	@echo ""
+	@echo "For testing please navigate to 'tests' folders and run"
+	@echo ""
+	@echo "  make                                - for general help"
+	@echo "  make vagrant-up-prepare             - Prepare vagrant"
+	@echo "  make test-all-afer-build-and-deploy - Prepare vagrant"
+	@echo ""

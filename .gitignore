@@ -1,6 +1,8 @@
-.vscode/
 .idea/
 .molecule/
+.vagrant/
+.vscode/
+/build
 /venv
 /tmp/*
 !/tmp/.gitfile
