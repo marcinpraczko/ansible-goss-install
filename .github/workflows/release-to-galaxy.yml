@@ -1,0 +1,17 @@
+name: Release to Ansible Galaxy
+
+on:
+  workflow_dispatch: # Triggered manually
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Import role to Ansible Galaxy
+        run: ansible-galaxy role import marcinpraczko ansible-goss-install --role-name goss-install --token $ANSIBLE_GALAXY_TOKEN
+        env:
+          ANSIBLE_GALAXY_TOKEN: ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
