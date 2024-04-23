@@ -3,7 +3,7 @@
 
 # Ansible-goss-install
 
-- Ansible Role Version: `0.1.10`
+- Ansible Role Version: `0.1.11`
 - Goss Version: `0.4.6`
 
 ## Goss resources
@@ -51,12 +51,13 @@ Following example will install ``goss`` in user home directory: ``${HOME}/bin``:
 
 ```yaml
 - name: "Install goss in home directory"
-  hosts: all
+  hosts: localhost
   become: False
-  gather_facts: False
+  gather_facts: True
 
   roles:
-    - "marcinpraczko.goss-install"
+    - role: "marcinpraczko.goss-install"
+
 ```
 
 ### Install on system
@@ -78,22 +79,20 @@ Following example will install ``goss`` in system: ``/usr/local/bin``:
 
 ## Testing
 
-### There is GitHub Action for testing
+I tried to work with latest versions of `molecule` and `vagrant` - however this didn't work at all.
+There were too many changes in `molecule` and didn't work at all. I needed to develop altearnative solution.
+
+- For now testing with `molecule` is not supported (removed).
+
+### GitHub Action for testing (Disabled)
 
 - [Molecule Test](https://github.com/marcinpraczko/ansible-goss-install/actions/workflows/molecule-test.yml)
 
 ### Locally
 
-This role can be tested via ``molecule`` with commands (Following commands will install it):
+This role can be tested locally with `vagrant`
+For more details please run
 
 ```bash
-make python3-create-venv
-make test-molecule            # WARNING: Uses default Ansible driver, tests run on local machine as if installing.
+make testing-installation    ## This will display more instuctions related with testing locally
 ```
-
-For more detail about molecule, please visit:
-
-- [Molecule](https://molecule.readthedocs.io/en/latest/)
-- [Molecule CI](https://ansible.readthedocs.io/projects/molecule/ci/)
-- [Ansible about molecule](https://ansible.readthedocs.io/projects/molecule/getting-started/)
-

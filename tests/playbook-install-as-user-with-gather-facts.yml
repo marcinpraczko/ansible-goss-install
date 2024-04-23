@@ -1,0 +1,23 @@
+- name: "Install goss in home directory"
+  hosts: localhost
+  become: False
+  gather_facts: True
+
+  vars:
+    test_info: |
+      Testing Goss installation
+      User: NOT-ROOT
+      Gather facts: True
+      Expected Result: PASS
+      
+  pre_tasks:
+    - name: Display test information
+      debug:
+        msg: "{{ test_info }}"
+
+    - name: "Verification: Display HOME environment variable"
+      debug:
+        var: ansible_env.HOME
+
+  roles:
+    - role: "marcinpraczko.goss-install"

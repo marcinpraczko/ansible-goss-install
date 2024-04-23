@@ -1,8 +1,0 @@
----
-- name: Converge
-  hosts: all
-  connection: local
-  gather_facts: false
-
-  roles:
-    - role: marcinpraczko.goss-install

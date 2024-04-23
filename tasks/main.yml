@@ -1,4 +1,20 @@
 ---
+- name: Check if HOME environment variable is defined
+  fail:
+    msg: |
+      HOME environment variable is not defined.
+      Please make sure that 'gather_facts' is set to 'True' in playbook.
+  when: ansible_env.HOME is undefined
+
+- name: Display goss_dst_dir
+  debug:
+    var: goss_dst_dir
+  when: ansible_verbosity >= 2
+
+- name: Add HOME prefix to 'goss_dst_dir' if equals 'bin' (default value for non-root users)
+  set_fact:
+    goss_dst_dir: "{{ [ansible_env.HOME, goss_dst_dir] | ansible.builtin.path_join }}"
+  when: goss_dst_dir == 'bin'
 
 - name: "Ensure that destination folder exists"
   ansible.builtin.file:

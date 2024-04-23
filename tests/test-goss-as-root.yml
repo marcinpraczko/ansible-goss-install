@@ -1,0 +1,9 @@
+file:
+    /usr/local/bin/goss:
+        exists: true
+        filetype: symlink
+        linked-to: goss-linux-amd64
+
+    /usr/local/bin/goss-linux-amd64:
+        exists: true
+        sha256: bc818caf99cbab563126297ec568d98911d61d2d7a25f4f37068b7a7916130b5
