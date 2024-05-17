@@ -36,7 +36,7 @@ python3-create-venv: ## Create python venv and install PIP packages
 ##
 ## Goss - release versions
 ##
-GOSS_VERSION_TO_CHECK := 0.4.6
+GOSS_VERSION_TO_CHECK := 0.4.7
 
 .PHONY: goss-check-releases-versions
 goss-check-releases-versions: ## Check the latest goss releases versions

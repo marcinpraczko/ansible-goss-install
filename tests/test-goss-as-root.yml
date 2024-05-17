@@ -6,4 +6,11 @@ file:
 
     /usr/local/bin/goss-linux-amd64:
         exists: true
-        sha256: bc818caf99cbab563126297ec568d98911d61d2d7a25f4f37068b7a7916130b5
+        sha256: 1206cc17af6d529baefae79c0cad6383c75f3cc68dc152632d393be827b13d5f
+
+command:
+    /usr/local/bin/goss --version:
+        exit-status: 0
+        stdout: ['v0.4.7']
+        stderr: []
+        timeout: 10000 # command should finish within 10 seconds
