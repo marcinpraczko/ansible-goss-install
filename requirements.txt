@@ -29,3 +29,4 @@ rich==13.7.0
 rpds-py==0.13.0
 subprocess-tee==0.4.1
 wcmatch==8.5
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
