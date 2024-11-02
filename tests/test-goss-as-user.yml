@@ -6,11 +6,11 @@ file:
 
     /home/vagrant/bin/goss-linux-amd64:
         exists: true
-        sha256: 1206cc17af6d529baefae79c0cad6383c75f3cc68dc152632d393be827b13d5f
+        sha256: 87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
 
 command:
     /home/vagrant/bin/goss --version:
         exit-status: 0
-        stdout: ['v0.4.7']
+        stdout: ['v0.4.9']
         stderr: []
         timeout: 10000 # command should finish within 10 seconds

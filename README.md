@@ -1,10 +1,10 @@
-[![Snyk Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) [![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__goss-blue.svg?style=flat)](https://galaxy.ansible.com/marcinpraczko/goss-install)  
+[![Snyk Known Vulnerabilities](https://snyk.io//test/github/marcinpraczko/ansible-goss-install/badge.svg?targetFile=requirements.txt)](https://snyk.io//test/github/marcinpraczko/ansible-goss-install?targetFile=requirements.txt) [![Galaxy](https://img.shields.io/badge/galaxy-dockpack.base__goss-blue.svg?style=flat)](https://galaxy.ansible.com/marcinpraczko/goss-install)
 
 
 # Ansible-goss-install
 
 - Ansible Role Version: `0.1.13`
-- Goss Version: `0.4.7`
+- Goss Version: `0.4.9`
 
 ## Goss resources
 
@@ -94,5 +94,5 @@ This role can be tested locally with `vagrant`
 For more details please run
 
 ```bash
-make testing-installation    ## This will display more instuctions related with testing locally
+make testing-installation    ## This will display more instructions related with testing locally
 ```
