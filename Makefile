@@ -27,7 +27,7 @@ help:: ## Help: Show this help text
 
 .PHONY: bump-version-patch
 bump-version-patch: ## Bump version - patch level
-	bumpversion patch
+	bumpversion patch --verbose
 
 .PHONY: python3-create-venv
 python3-create-venv: ## Create python venv and install PIP packages
