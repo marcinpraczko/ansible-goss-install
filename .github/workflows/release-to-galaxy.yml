@@ -3,6 +3,10 @@ name: Release to Ansible Galaxy
 on:
   workflow_dispatch: # Triggered manually
 
+permissions:
+  actions: 'read'
+  contents: 'write'
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -11,7 +15,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install bump2version
+
+      - name: Git configuration
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Bump version
+        run: |
+            make bump-version-patch
+            git diff
+
+      - name: Git Push changes
+        run: |
+          git push --follow-tags
+
       - name: Import role to Ansible Galaxy
-        run: ansible-galaxy role import marcinpraczko ansible-goss-install --role-name goss-install --token $ANSIBLE_GALAXY_TOKEN
+        run: |
+            ansible-galaxy role import marcinpraczko ansible-goss-install \
+                --role-name goss-install \
+                --token $ANSIBLE_GALAXY_TOKEN
         env:
           ANSIBLE_GALAXY_TOKEN: ${{ secrets.ANSIBLE_GALAXY_TOKEN }}
