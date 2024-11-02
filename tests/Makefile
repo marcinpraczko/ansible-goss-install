@@ -152,9 +152,9 @@ deploy-tarball: ## Deploy tarball on Vagrant
 ## Testing - Install and verify goss installation on Vagrant
 ##
 
-.PHONY: test-all-afer-build-and-deploy
-test-all-afer-build-and-deploy: ## Test all installations after build and deploy tarball
-test-all-afer-build-and-deploy: \
+.PHONY: test-all-after-build-and-deploy
+test-all-after-build-and-deploy: ## Test all installations after build and deploy tarball
+test-all-after-build-and-deploy: \
 	build-and-deploy-tarball \
 	test-all
 

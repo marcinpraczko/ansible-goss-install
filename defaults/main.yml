@@ -6,10 +6,12 @@ goss_dst_dir: bin
 goss_dst_dir_mode: 0755
 
 # Latest version
-goss_version: v0.4.7
-goss_sha256sum: 1206cc17af6d529baefae79c0cad6383c75f3cc68dc152632d393be827b13d5f
+goss_version: v0.4.9
+goss_sha256sum: 87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
 
 # OLD - Add choices here in some point
+#goss_version: v0.4.7
+#goss_sha256sum: 1206cc17af6d529baefae79c0cad6383c75f3cc68dc152632d393be827b13d5f
 # goss_version: v0.4.6
 # goss_sha256sum: bc818caf99cbab563126297ec568d98911d61d2d7a25f4f37068b7a7916130b5
 # goss_version: v0.4.4
