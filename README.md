@@ -4,7 +4,7 @@
 # Ansible-goss-install
 
 - Ansible Role Version: `0.1.19`
-- Goss Version: `0.4.9`
+- Goss Version: `0.4.10`
 
 ## Goss resources
 
