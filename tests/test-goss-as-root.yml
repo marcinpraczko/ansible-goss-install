@@ -1,16 +1,12 @@
 file:
     /usr/local/bin/goss:
         exists: true
-        filetype: symlink
-        linked-to: goss-linux-amd64
-
-    /usr/local/bin/goss-linux-amd64:
-        exists: true
-        sha256: 87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
+        filetype: file
+        sha256: 29d64f541c2b6edee5c7ee75dd5dd4da1c8b94e336c56ffeb864ae460a527c4f
 
 command:
     /usr/local/bin/goss --version:
         exit-status: 0
-        stdout: ['v0.4.9']
+        stdout: ['goss version 0.4.10']
         stderr: []
         timeout: 10000 # command should finish within 10 seconds

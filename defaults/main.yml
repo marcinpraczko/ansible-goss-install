@@ -1,13 +1,14 @@
 ---
 # == Detail about Goss binary files in GitHub ==
-# https://github.com/aelsabbahy/goss/releases/
-goss_arch: amd64
+# https://github.com/goss-org/goss/releases/
+goss_arch: x86_64
 goss_dst_dir: bin
 goss_dst_dir_mode: 0755
 
 # Latest version
-goss_version: v0.4.9
-goss_sha256sum: 87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
+goss_version: v0.4.10
+goss_sha256sum: 26e365428946294bcec0c61d867bb3c8349f39feb3d0e6f59084e98632785cc7
+goss_binary_sha256sum: 29d64f541c2b6edee5c7ee75dd5dd4da1c8b94e336c56ffeb864ae460a527c4f
 
 # OLD - Add choices here in some point
 #goss_version: v0.4.7
@@ -25,9 +26,9 @@ goss_sha256sum: 87dd36cfa1b8b50554e6e2ca29168272e26755b19ba5438341f7c66b36decc19
 # goss_version: v0.3.5
 # goss_sha256sum: 5669df08e406abf594de0e7a7718ef389e5dc7cc76905e7f6f64711e6aad7fa3
 
-goss_bin_filename: goss-linux-{{ goss_arch }}
-goss_bin_symlink: goss
-goss_url: "https://github.com/goss-org/goss/releases/download/{{ goss_version }}/{{ goss_bin_filename }}"
+goss_bin_filename: goss
+goss_archive_filename: "goss_{{ goss_version | regex_replace('^v', '') }}_linux_{{ goss_arch }}.tar.gz"
+goss_url: "https://github.com/goss-org/goss/releases/download/{{ goss_version }}/{{ goss_archive_filename }}"
 
 # == Variables related with file system ==
 goss_create_dst_dir: True

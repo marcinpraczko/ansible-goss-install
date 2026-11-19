@@ -23,15 +23,61 @@
     mode: "{{ goss_dst_dir_mode }}"
   when: goss_create_dst_dir
 
-- name: "Download Goss binary from GitHub"
-  get_url:
+- name: "Check existing Goss binary"
+  ansible.builtin.stat:
+    path: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
+    follow: true
+    checksum_algorithm: sha256
+  register: goss_existing_binary_stat
+
+- name: "Determine whether Goss binary needs updating"
+  ansible.builtin.set_fact:
+    goss_binary_needs_update: >-
+      {{ not goss_existing_binary_stat.stat.exists or
+         (goss_existing_binary_stat.stat.islnk | default(false)) or
+         (goss_existing_binary_stat.stat.checksum | default('')) != goss_binary_sha256sum }}
+
+- name: "Download Goss release archive from GitHub"
+  ansible.builtin.get_url:
     url: "{{ goss_url }}"
-    dest: "{{ goss_dst_dir }}"
+    dest: "{{ goss_dst_dir }}/{{ goss_archive_filename }}"
     checksum: "sha256:{{ goss_sha256sum }}"
+    mode: 0644
+  when: goss_binary_needs_update
+
+- name: "Remove outdated Goss binary or symlink"
+  ansible.builtin.file:
+    path: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
+    state: absent
+  when: goss_binary_needs_update
+
+- name: "Extract Goss binary"
+  ansible.builtin.unarchive:
+    src: "{{ goss_dst_dir }}/{{ goss_archive_filename }}"
+    dest: "{{ goss_dst_dir }}"
+    remote_src: true
+    creates: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
+    include:
+      - "{{ goss_bin_filename }}"
+  when: goss_binary_needs_update
+
+- name: "Ensure Goss binary is executable"
+  ansible.builtin.file:
+    path: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
     mode: 0755
 
-- name: "Ensure that Symlink to binary file is created"
+- name: "Verify Goss binary checksum"
+  ansible.builtin.stat:
+    path: "{{ goss_dst_dir }}/{{ goss_bin_filename }}"
+    checksum_algorithm: sha256
+  register: goss_binary_stat
+
+- name: "Assert Goss binary checksum"
+  ansible.builtin.assert:
+    that:
+      - goss_binary_stat.stat.checksum == goss_binary_sha256sum
+
+- name: "Remove downloaded Goss archive"
   ansible.builtin.file:
-    state: link
-    src: "{{ goss_bin_filename }}"
-    dest: "{{ goss_dst_dir }}/{{ goss_bin_symlink }}"
+    path: "{{ goss_dst_dir }}/{{ goss_archive_filename }}"
+    state: absent

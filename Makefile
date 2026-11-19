@@ -36,7 +36,9 @@ python3-create-venv: ## Create python venv and install PIP packages
 ##
 ## Goss - release versions
 ##
-GOSS_VERSION_TO_CHECK := 0.4.9
+GOSS_VERSION_TO_CHECK := 0.4.10
+GOSS_ARCHIVE_FILENAME := goss_$(GOSS_VERSION_TO_CHECK)_linux_x86_64.tar.gz
+GOSS_SHA256SUMS_FILENAME := goss_$(GOSS_VERSION_TO_CHECK)_SHA256SUMS
 
 .PHONY: goss-check-releases-versions
 goss-check-releases-versions: ## Check the latest goss releases versions
@@ -50,20 +52,20 @@ goss-check-releases-versions: ## Check the latest goss releases versions
 .PHONY: goss-download-release
 goss-download-release: ## Download goss release
 	@echo "Downloading goss release v$(GOSS_VERSION_TO_CHECK)"
-	wget -c -o tmp/goss-linux-amd64.log -O tmp/goss-linux-amd64 \
-		https://github.com/goss-org/goss/releases/download/v$(GOSS_VERSION_TO_CHECK)/goss-linux-amd64
-	wget -c -o tmp/goss-linux-amd64.sha256.log -O tmp/goss-linux-amd64.sha256 \
-		https://github.com/goss-org/goss/releases/download/v$(GOSS_VERSION_TO_CHECK)/goss-linux-amd64.sha256
+	wget -c -o tmp/$(GOSS_ARCHIVE_FILENAME).log -O tmp/$(GOSS_ARCHIVE_FILENAME) \
+		https://github.com/goss-org/goss/releases/download/v$(GOSS_VERSION_TO_CHECK)/$(GOSS_ARCHIVE_FILENAME)
+	wget -c -o tmp/$(GOSS_SHA256SUMS_FILENAME).log -O tmp/$(GOSS_SHA256SUMS_FILENAME) \
+		https://github.com/goss-org/goss/releases/download/v$(GOSS_VERSION_TO_CHECK)/$(GOSS_SHA256SUMS_FILENAME)
 
 .PHONY: goss-verify-release-sha256sum
 goss-verify-release-sha256sum: ## Verify sha256 sum for goss release
 	@echo "Checking goss release sha256sum"
-	@cd tmp && sha256sum -c goss-linux-amd64.sha256
+	@cd tmp && grep "  $(GOSS_ARCHIVE_FILENAME)$$" $(GOSS_SHA256SUMS_FILENAME) | sha256sum -c
 
 .PHONY: goss-clean-release-files
 goss-clean-release-files: ## Clean goss release files
 	@echo "Cleaning goss release"
-	rm -vf tmp/goss-linux-amd64*
+	rm -vf tmp/$(GOSS_ARCHIVE_FILENAME)* tmp/$(GOSS_SHA256SUMS_FILENAME)*
 
 ##
 ## Testing ansible role
